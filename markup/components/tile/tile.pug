@@ -1,12 +1,67 @@
-mixin tile(data)
+mixin tile(tile)
+  - if (tile.size === 's')
+    +tile_s(tile)
+  - if (tile.size === 'm')
+    +tile_m(tile)
+  - if (tile.size === 'l')
+    +tile_l(tile)
+  //- .tile
+  //-   -const titleColor = `color: ${tile.titleColor};`
+  //-   .tile__title(style= titleColor)= tile.title
+  //-   - const imgsrc = `%=static=%img/content/${tile.image}.png`
+  //-   .tile__content-container
+  //-     .tile__image-container
+  //-       img.tile__image(src= imgsrc)
+  //-     .tile__info-container
+  //-       .tile__description= tile.description
+  //-       .tile__
+
+mixin tile_s(tile)
+  .tile.tile__sm
+    .tile__content-container
+      .tile__info.tile__info--sm
+        h2.tile__header.tile__header--sm
+          - const style = `color: ${tile.titleColor}`;
+            a.tile__link(href="#" style= style)= tile.title
+      .tile__actions-container
+        .tile__dots
+        .tile__like
+    .tile__image-container
+      - const imgsrc = `%=static=%img/content/${tile.image}@3x.png`
+        img.tile__image(src= imgsrc)
+      
+
+mixin tile_m(tile)
+  .tile.tile__md
+    h2.tile__header.tile__header--md
+      - const style = `color: ${tile.titleColor}`;
+        a.tile__link(href="#" style= style)= tile.title
+    .tile__image-container
+      - const imgsrc = `%=static=%img/content/${tile.image}@3x.png`
+        img.tile__image(src= imgsrc)
+    .tile__footer
+      .tile__description
+      .tile__actions-container.tile__actions-container--md
+        .tile__dots
+        .tile__like
+
+mixin tile_l(tile)
   .tile
 
 mixin tile_sm(data)
   .tile.tile__sm
-
 
 mixin tile_md(data)
   .tile.tile__md
 
 mixin tile_lg(data)
   .tile.tile__lg
+
+    //-   {
+    //-   title: '9 главных игровых релизов февраля',
+    //-   titleColor: '#605a54',
+    //-   image: 'img/9.png',
+    //-   description:
+    //-     'Представляю вам подборку релизов новых игр, которые ожидают нас в феврале.',
+    //-   size: 'l'
+    //- }

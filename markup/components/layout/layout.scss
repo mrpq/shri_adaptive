@@ -3,12 +3,16 @@
 }
 
 .layout__tiles {
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-flow: dense;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
 
   @media (min-width: $screen-sm) {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 16px;
+  }
+
+  @media (min-width: $screen-md) {
     grid-row-gap: 38px;
   }
 }

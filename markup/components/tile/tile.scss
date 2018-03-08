@@ -1,27 +1,147 @@
 .tile {
   border: 2px solid black;
+  position: relative;
 }
 
 .tile__sm {
-  background-color: lightblue;
-
-  // width: 182px;
+  display: flex;
+  flex-direction: column;
+  // background-color: lightblue;
+  grid-column: span 3;
   height: 234px;
-  grid-column: span 2;
+
+  @media (min-width: $screen-sm) {
+    grid-column: span 2;
+  }
 }
 
 .tile__md {
-  background-color: lightcoral;
+  height: 305px;
 
-  // width: 344px;
-  height: 205px;
-  grid-column: span 3;
+  grid-column: span 6;
+
+  @media (min-width: $screen-sm) {
+    grid-column: span 4;
+  }
+
+  @media (min-width: $screen-md) {
+    grid-column: span 3;
+  }
 }
 
 .tile__lg {
   background-color: lightgreen;
 
-  // width: 704px;
   height: 243px;
   grid-column: span 6;
+}
+
+.tile__content-container {
+  position: absolute;
+}
+
+.tile__info {
+}
+
+.tile__info--sm {
+  max-height: 78px;
+  overflow: hidden;
+  white-space: break-word;
+  text-overflow: ellipsis;
+  z-index: 100;
+  background-color: lightgreen;
+}
+
+.tile__header {
+  font-family: "YS Text";
+  font-stretch: normal;
+  font-weight: bold;
+  margin: 0;
+  font-weight: bold;
+  background-color: #fff;
+  // text-overflow: ellipsis;
+}
+
+.title__header--sm {
+  font-size: 18px;
+  line-height: 1.11111;
+}
+
+.tile__header--md {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.tile__link {
+  text-decoration: none;
+}
+
+.tile__content-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile__image-container {
+  margin-top: auto;
+  font-size: 0;
+}
+
+.tile__image {
+  max-width: 100%;
+}
+
+.tile__actions-container {
+  flex: 1 1;
+  position: relative;
+}
+
+.tile__actions-container--md {
+  flex-basis: 48px;
+  position: relative;
+}
+
+.tile__dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.tile__dots::after {
+  content: "";
+  position: absolute;
+  @include bg($Actions);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tile__like {
+  position: absolute;
+  cursor: pointer;
+  bottom: 8px;
+  right: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.tile__like::after {
+  content: "";
+  position: absolute;
+  @include bg($Heart);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tile__footer {
+  display: flex;
+  height: 62px;
+}
+
+.tile__description {
+  flex: 1 1;
 }
