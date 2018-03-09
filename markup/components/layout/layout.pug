@@ -2,8 +2,12 @@ mixin layout(tiles)
   .layout
     .layout__container
       .layout__tiles
-        include ../tile/tile.pug
-        +tile(tiles[0])
+        include ../tileSm/tileSm.pug
+        include ../tileMd/tileMd.pug
+        +tileMd(tiles[0])
+        //- +tileSm(tiles[2])
+        //- +tileSm(tiles[3])
+        //- +tileSm(tiles[4])
         //- +tile_md()
         //- +tile_md()
         //- +tile_sm()

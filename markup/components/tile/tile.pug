@@ -1,10 +1,13 @@
 mixin tile(tile)
+  include ../tileSm/tileSm.pug
+  include ../tileMd/tileMd.pug
+  include ../tileLg/tileLg.pug
   - if (tile.size === 's')
-    +tile_s(tile)
+    +tileSm(tile)
   - if (tile.size === 'm')
-    +tile_m(tile)
+    +tileMd(tile)
   - if (tile.size === 'l')
-    +tile_l(tile)
+    +tileLg(tile)
   //- .tile
   //-   -const titleColor = `color: ${tile.titleColor};`
   //-   .tile__title(style= titleColor)= tile.title

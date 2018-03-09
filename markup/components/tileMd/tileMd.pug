@@ -1,0 +1,13 @@
+mixin tileMd(data)
+  .tile-md
+    .tile-md__overlay    
+      .tile-md__title= data.title
+      .tile-md__whitespace
+    .tile__image-container
+      - const imgsrc = `%=static=%img/content/${data.image}@3x.png`
+        img.tile__image(src= imgsrc)
+    .tile-md__desc-container
+      p.tile-md__desc= data.description
+      .tile-md__actions
+        .tile-md__dots
+        .tile-md__like
