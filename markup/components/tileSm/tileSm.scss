@@ -32,8 +32,10 @@
 
 .tile-sm__whitespace {
   // display: none;
-  height: 14px;
   background-color: #fff;
+  @media (min-width: $screen-xs) {
+    height: 14px;
+  }
 }
 
 .tile-sm__actions {
@@ -41,8 +43,7 @@
   flex: 1;
   position: relative;
   margin-top: auto;
-
-  max-height: 115px;
+  max-height: 105px;
   @media (min-width: $screen-xs) {
     max-height: none;
     // max-height: 175px;

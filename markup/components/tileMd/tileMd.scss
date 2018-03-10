@@ -3,8 +3,100 @@
   display: flex;
   flex-direction: column;
   grid-column: span 6;
+  height: 302px;
+  max-width: 344px;
 
   @media (min-width: $screen-sm) {
     grid-column: span 3;
   }
+}
+
+.tile-md__overlay {
+  position: absolute;
+}
+
+.tile-md__title {
+  // position: absolute;
+  max-height: 70px;
+  overflow: hidden;
+  word-break: break-word;
+  font-family: "YS Text";
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  background-color: #fff;
+}
+
+.tile-md__whitespace {
+  height: 13px;
+  background-color: #fff;
+}
+.tile-md__image-container {
+  margin-top: auto;
+}
+.tile-md__image {
+  width: 100%;
+  max-height: 180px;
+}
+
+.tile-md__desc-container {
+  display: flex;
+  margin-top: 8px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.tile-md__desc {
+  margin: 0;
+  flex: 1 1;
+}
+
+.tile-md__actions {
+  display: flex;
+  width: 35px;
+  // flex: 1;
+  position: relative;
+  // margin-top: auto;
+
+  // max-height: 115px;
+  @media (min-width: $screen-xs) {
+    max-height: none;
+    // max-height: 175px;
+  }
+}
+
+.tile-md__dots {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.tile-md__dots::after {
+  content: "";
+  position: absolute;
+  @include bg($Actions);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tile-md__like {
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.tile-md__like::after {
+  content: "";
+  position: absolute;
+  @include bg($Heart);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

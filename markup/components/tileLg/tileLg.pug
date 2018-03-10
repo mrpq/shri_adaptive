@@ -1,2 +1,13 @@
 mixin tileLg(data)
-    .tileLg
+  .tile-lg 
+    .tile-lg__image-container
+      - const imgsrc = `%=static=%img/content/${data.image}@3x.png`
+        img.tile-lg__image(src= imgsrc)
+    .tile-lg__desc-container
+      .tile-lg__overlay    
+        .tile-lg__title= data.title
+        .tile-lg__whitespace
+      p.tile-lg__desc= data.description
+      .tile-lg__actions
+        .tile-lg__dots
+        .tile-lg__like

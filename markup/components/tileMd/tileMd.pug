@@ -3,9 +3,9 @@ mixin tileMd(data)
     .tile-md__overlay    
       .tile-md__title= data.title
       .tile-md__whitespace
-    .tile__image-container
+    .tile-md__image-container
       - const imgsrc = `%=static=%img/content/${data.image}@3x.png`
-        img.tile__image(src= imgsrc)
+        img.tile-md__image(src= imgsrc)
     .tile-md__desc-container
       p.tile-md__desc= data.description
       .tile-md__actions

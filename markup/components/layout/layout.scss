@@ -1,7 +1,3 @@
-.del {
-  height: 50px;
-}
-
 .layout__tiles {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -9,16 +5,19 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 
-  @media (min-width: $screen-sm) {
-  }
-
   @media (min-width: $screen-md) {
     grid-row-gap: 38px;
   }
 }
 
 .layout__container {
-  max-width: 704px;
+  max-width: 376px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: $screen-sm) {
+    max-width: 704px;
+  }
 }

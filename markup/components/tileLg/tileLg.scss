@@ -1,1 +1,130 @@
+.tile-lg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 6;
+  max-width: 344px;
 
+  @media (min-width: $screen-sm) {
+    flex-direction: row;
+    max-width: none;
+    max-height: 243px;
+  }
+}
+
+.tile-lg__overlay {
+  position: absolute;
+  max-height: 60px;
+  top: 0;
+  overflow: hidden;
+  @media (min-width: $screen-sm) {
+    position: static;
+    max-height: 48px;
+  }
+}
+
+.tile-lg__whitespace {
+  height: 14px;
+  background-color: #fff;
+}
+
+.tile-lg__title {
+  overflow: hidden;
+  word-break: break-word;
+  font-family: "YS Text";
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  background-color: #fff;
+}
+
+.tile-lg__image-container {
+  margin-top: auto;
+  @media (min-width: $screen-sm) {
+    flex-grow: 2;
+    min-width: calc(66.666% - 16px);
+  }
+}
+.tile-lg__image {
+  width: 100%;
+  // max-height: 180px;
+}
+
+.tile-lg__desc-container {
+  display: flex;
+  margin-top: 8px;
+  height: 60px;
+  overflow: hidden;
+  @media (min-width: $screen-sm) {
+    flex-grow: 1;
+    margin-left: 16px;
+    display: block;
+    height: auto;
+  }
+}
+
+.tile-lg__desc {
+  margin: 0;
+  flex: 1 1;
+}
+
+.tile-lg__actions {
+  display: flex;
+  width: 30px;
+  // flex: 1;
+  position: relative;
+  // margin-top: auto;
+
+  // max-height: 115px;
+  @media (min-width: $screen-xs) {
+    max-height: none;
+  }
+
+  @media (min-width: $screen-sm) {
+    width: auto;
+    height: 32px;
+    justify-content: space-between;
+  }
+}
+
+.tile-lg__dots {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  @media (min-width: $screen-sm) {
+    position: relative;
+  }
+}
+
+.tile-lg__dots::after {
+  content: "";
+  position: absolute;
+  @include bg($Actions);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tile-lg__like {
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  @media (min-width: $screen-sm) {
+    position: relative;
+  }
+}
+
+.tile-lg__like::after {
+  content: "";
+  position: absolute;
+  @include bg($Heart);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
