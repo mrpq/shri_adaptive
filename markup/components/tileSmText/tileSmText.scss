@@ -1,0 +1,102 @@
+.tile-smtext {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3;
+  min-height: 200px;
+
+  @media (min-width: $screen-sm) {
+    max-height: 232px;
+    grid-column: span 2;
+  }
+}
+
+.tile-smtext__overlay {
+  height: 100%;
+  width: 100%;
+}
+
+.tile-smtext__title {
+  max-height: 60px;
+  overflow: hidden;
+  word-break: break-word;
+  font-family: "YS Text";
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  background-color: #fff;
+}
+
+.tile-smtext__desc {
+  margin: 0;
+  margin-top: 12px;
+  max-height: 120px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.tile-smtext__actions {
+  display: flex;
+  // flex-wrap: wrap;
+  position: relative;
+  margin: 0;
+  margin-top: auto;
+  height: 32px;
+  align-items: center;
+  @media (min-width: $screen-md) {
+    max-height: none;
+    // flex-wrap: nowrap;
+    // max-height: 175px;
+  }
+}
+
+.tile-smtext__channel {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @media (max-width: $screen-sm) {
+    // flex-basis: 100%;
+  }
+}
+
+.tile-smtext__dots {
+  position: relative;
+  // top: 0;
+  // right: 0;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.tile-smtext__dots::after {
+  content: "";
+  position: absolute;
+  @include bg($Actions);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tile-smtext__like {
+  position: relative;
+  cursor: pointer;
+  // bottom: 8px;
+  // right: 0;
+  width: 32px;
+  height: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.tile-smtext__like::after {
+  content: "";
+  position: absolute;
+  @include bg($Heart);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -5,11 +5,13 @@ mixin layout(tiles)
         include ../tileSm/tileSm.pug
         include ../tileMd/tileMd.pug
         include ../tileLg/tileLg.pug
-        +tileSmText(tile)
-        //- each tile in tiles
-        //-   - if (tile.size === 's')
-        //-     +tileSm(tile)
-        //-   - if (tile.size === 'm')
-        //-     +tileMd(tile)
-        //-   - if (tile.size === 'l')
-        //-     +tileLg(tile)
+        include ../tileSmText/tileSmText.pug
+        each tile in tiles
+          - if (tile.size === 's')
+            +tileSm(tile)
+          - if (tile.size === 'st')
+            +tileSmText(tile)
+          - if (tile.size === 'm')
+            +tileMd(tile)
+          - if (tile.size === 'l')
+            +tileLg(tile)

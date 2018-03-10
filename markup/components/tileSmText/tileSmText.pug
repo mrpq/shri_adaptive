@@ -1,0 +1,9 @@
+mixin tileSmText(data)
+  .tile-smtext
+    .tile-smtext__overlay    
+      .tile-smtext__title= data.title
+    p.tile-smtext__desc= data.description
+    .tile-smtext__actions
+      .tile-smtext__channel= data.channelName
+      .tile-smtext__dots
+      .tile-smtext__like
