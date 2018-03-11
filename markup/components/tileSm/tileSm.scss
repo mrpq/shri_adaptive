@@ -85,3 +85,12 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.tile-sm__image-container {
+  margin-top: auto;
+  font-size: 0;
+}
+
+.tile-sm__image {
+  max-width: 100%;
+}
