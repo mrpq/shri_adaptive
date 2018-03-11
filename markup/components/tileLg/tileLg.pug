@@ -5,8 +5,9 @@ mixin tileLg(data)
         img.tile-lg__image(src= imgsrc)
     .tile-lg__desc-container
       .tile-lg__overlay    
-        .tile-lg__title= data.title
-        .tile-lg__whitespace
+        - const style = `color: ${data.titleColor}`;
+          .tile-lg__title(style= style )= data.title
+          .tile-lg__whitespace
       p.tile-lg__desc= data.description
       .tile-lg__actions
         .tile-lg__dots
