@@ -3,9 +3,9 @@ mixin layout(tiles)
     .layout__container
       .layout__tiles
         include ../tileSm/tileSm.pug
+        include ../tileSmText/tileSmText.pug
         include ../tileMd/tileMd.pug
         include ../tileLg/tileLg.pug
-        include ../tileSmText/tileSmText.pug
         each tile in tiles
           - if (tile.size === 's')
             +tileSm(tile)
