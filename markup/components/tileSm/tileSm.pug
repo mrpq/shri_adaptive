@@ -7,6 +7,6 @@ mixin tileSm(data)
       .tile-sm__actions
         .tile-sm__dots
         .tile-sm__like
-    .tile__image-container
+    .tile-sm__image-container
       - const imgsrc = `%=static=%img/content/${data.image}@3x.png`
-        img.tile__image(src= imgsrc)
+        img.tile-sm__image(src= imgsrc)
