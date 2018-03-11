@@ -20,7 +20,6 @@
 
 .tile-md__title {
   overflow: hidden;
-  // position: absolute;
 
   max-height: 68px;
 
@@ -62,18 +61,14 @@
 }
 
 .tile-md__actions {
-  // flex: 1;
   position: relative;
 
   display: flex;
 
   width: 35px;
-  // margin-top: auto;
 
-  // max-height: 115px;
   @media (min-width: $screen-xs) {
     max-height: none;
-    // max-height: 175px;
   }
 }
 
