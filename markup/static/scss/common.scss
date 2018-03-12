@@ -1,6 +1,10 @@
 // My Styles
 :root {
   box-sizing: border-box;
+  font-size: 16px;
+  @media (min-width: 1600px) {
+    font-size: 18px;
+  }
 }
 *,
 *::before,
