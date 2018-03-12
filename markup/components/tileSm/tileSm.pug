@@ -8,5 +8,9 @@ mixin tileSm(data)
         .tile-sm__dots
         .tile-sm__like
     .tile-sm__image-container
-      - const imgsrc = `%=static=%img/content/${data.image}@3x.png`
-        img.tile-sm__image(src= imgsrc)
+      - const imgsrc1x = `%=static=%img/content/${data.image}.png`
+      - const imgsrc2x = `%=static=%img/content/${data.image}@2x.png`
+      - const imgsrc3x = `%=static=%img/content/${data.image}@3x.png`
+      - const srcset = `${imgsrc1x} 112w, ${imgsrc2x} 224w, ${imgsrc3x} 336w`
+      - const sizes = `(min-width: 600px) 213px, 164px`
+        img.tile-sm__image(srcset= srcset, sizes= sizes, src=imgsrc1x alt=data.title)

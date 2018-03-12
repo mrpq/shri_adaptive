@@ -5,8 +5,12 @@ mixin tileMd(data)
         .tile-md__title(style= style )= data.title
         .tile-md__whitespace
     .tile-md__image-container
-      - const imgsrc = `%=static=%img/content/${data.image}@3x.png`
-        img.tile-md__image(src= imgsrc)
+      - const imgsrc1x = `%=static=%img/content/${data.image}.png`
+      - const imgsrc2x = `%=static=%img/content/${data.image}@2x.png`
+      - const imgsrc3x = `%=static=%img/content/${data.image}@3x.png`
+      - const srcset = `${imgsrc1x} 172w, ${imgsrc2x} 344w, ${imgsrc3x} 516w`
+      - const sizes = `(min-width: 600px) 328px, 344px`
+        img.tile-md__image(srcset= srcset, sizes= sizes, src=imgsrc1x alt=data.title)
     .tile-md__desc-container
       p.tile-md__desc= data.description
       .tile-md__actions

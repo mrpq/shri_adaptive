@@ -1,8 +1,12 @@
 mixin tileLg(data)
   .tile-lg 
     .tile-lg__image-container
-      - const imgsrc = `%=static=%img/content/${data.image}@3x.png`
-        img.tile-lg__image(src= imgsrc)
+      - const imgsrc1x = `%=static=%img/content/${data.image}.png`
+      - const imgsrc2x = `%=static=%img/content/${data.image}@2x.png`
+      - const imgsrc3x = `%=static=%img/content/${data.image}@3x.png`
+      - const srcset = `${imgsrc1x} 232w, ${imgsrc2x} 464w, ${imgsrc3x} 696w`
+      - const sizes = `(min-width: 600px) 442px, 344px`
+        img.tile-lg__image(srcset= srcset, sizes= sizes, src=imgsrc1x alt=data.title)
     .tile-lg__desc-container
       .tile-lg__overlay    
         - const style = `color: ${data.titleColor}`;
